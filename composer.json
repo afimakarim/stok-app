@@ -1,0 +1,17 @@
+{
+    "name": "afimakarim/web-prog1", 
+    "type": "project",
+    "authors": [
+        {
+            "name": "afi",
+            "email": "afi.makarim12@gmail.com",
+            "role": "game"
+        }, {
+            "name": "afi"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "version": "0.5"
+}
