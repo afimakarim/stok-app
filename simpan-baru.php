@@ -16,14 +16,14 @@ if($koneksi->connect_error) {
 //echo " STOK : ". $_POST["stok"];
 
 $query = "insert into stock_barang(kode, nama_barang, stok) " .
-        "values(" . $_POST["kode"] . ",'" . 
-        $_POST["namaBarang"] . "'," . $_POST["stok"] . ")";
+        "values(" . $_POST["kode"] . ",'" . $_POST["namaBarang"] 
+        . "'," . $_POST["stok"] . ")";
 //echo "<br>".$query;
 
 if($koneksi->query($query) === true){
     echo "<br> Data" . $_POST["namaBarang"] . "berhasil disimpan" . ' <a href="main.php">Lihat Data</a>';
 }else {
-    echo "<br> Data Gagal disimpan";
+    echo "<br> Kode sudah Di Pakai";
 }
 
 $koneksi->close();

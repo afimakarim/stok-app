@@ -1,15 +1,36 @@
-<h2>Aplikasi Stok Barang</h2>
-<hr>
-<a href="input.php">Tambah Data</a>
-<table border="1">
-    <tr>
-        <th>KODE</th>
-        <th>NAMA BARANG</th>
-        <th>STOK<th>
-    
-    <tr>
+<DOCTYPE html>
+<html>
+<head>
 
-    <?php
+    <title>STOK BARANG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="row">    
+    <div class="container">
+    <br>
+        <h2>Aplikasi Stok Barang</h2>
+        <hr>
+        <a href="input.php" class="btn btn-primary"> Tambah Data</a>
+        <br><br>
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center" >KODE</th>
+        <th class="text-center">NAMA BARANG</th>
+        <th class="text-center">STOK</th>
+        <th class="text-center" colspan="2">PILIHAN</th>
+
+      </tr>
+</thead>
+<tbody>
+<?php
     include "koneksi.php";
 
     $konkesiObj = new Koneksi();
@@ -34,16 +55,20 @@ if($data->num_rows <=0){
 } else {
     while($row = $data->fetch_assoc()) {
         echo "<tr>";
-        echo "<td>" . $row["kode"] . "</td>";
-        echo "<td>" . $row["nama_barang"] . "</td>";
-        echo "<td>" . $row["stok"] . "</td>";
-        echo '<td><a href="form-edit.php?kode=' .
-            $row["kode"]. '">Edit</a></td>';
-            echo '<td><a href="hapus.php?kode=' .
-            $row["kode"]. '">Hapus</a></td>';
+        echo '<td class="text-center">' . $row["kode"] . "</td>";
+        echo '<td class="text-center">' . $row["nama_barang"] . "</td>";
+        echo '<td class="text-center">' . $row["stok"] . "</td>";
+        echo '<td class="text-center"><a href="form-edit.php?kode=' .
+            $row["kode"]. '"><button type="button" class="btn btn-success">Edit</button></a>';
+            echo '<td class="text-center"><a href="hapus.php?kode=' .
+            $row["kode"]. '"><button type="button" class="btn btn-danger">Hapus</button></a></td>';
         echo "</tr>";
     }
 }
-    ?>
-    
-</table>
+    ?>     
+    </tbody>
+  </table>
+  </div>
+  </div>
+</body>
+</html>

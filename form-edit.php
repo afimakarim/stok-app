@@ -1,5 +1,23 @@
-<h2>Formulir Update Data</h2>
-<hr>
+<DOCTYPE html>
+<html>
+<head>
+
+    <title>APLIKASI STOK BARANG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="row">    
+    <div class="container">
+    <br>
+        <h2>Form Update Data Barang</h2>
+        <hr>
+        <br><br>
 <?php
 include "koneksi.php";
 
@@ -28,21 +46,28 @@ if($data->num_rows <=0){
 ?>
 <form action="update.php" method="post">
     <table>
-        <tr>
-            <td>KODE </td>
-            <td>: <input type="text" name="kode" readonly="true"
-                value=<?php echo $_GET["kode"]; ?> ></td>
-        </tr>
-        <tr>
-            <td>NAMA BARANG</td>
-            <td> : <input type="text" name="namaBarang"
-                value=<?php echo $namaBarang; ?> ></td>
-        </tr>
-        <tr>
-            <td>STOK</td>
-            <td> : <input type="text" name="stok"
-            value=<?php echo $stok; ?> ></td>
-        </tr>
+        <div class="form-group">
+            <label for="kode">KODE BARANG:</label>
+            <br><br>
+            <input type="text" class="form-control" name="kode" readonly="true"
+                value=<?php echo $_GET["kode"]; ?> >
+        </div>
+        <div class="form-group">
+            <label for="nama">NAMA BARANG:</label>
+            <br><br>
+            <input type="text" class="form-control" name="namaBarang"
+                value=<?php echo $namaBarang; ?> >
+        </div>
+        <div class="form-group">
+            <label for="stok">STOK BARANG:</label>
+            <br><br>
+            <input type="text" class="form-control" name="stok"
+            value=<?php echo $stok; ?> >
+        </div>
     </table>
-    <input type="submit" value="Simpan">
+    <input type="submit" class="btn btn-success" value="Simpan">
 </form>
+    </div>
+    </div>
+</body>
+</html>
